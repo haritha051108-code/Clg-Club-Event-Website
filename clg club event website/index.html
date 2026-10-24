@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Celestius Events — Discover Campus Life & College Clubs</title>
+  <meta name="description" content="Explore exciting college club events, workshops, hackathons, and cultural jams at Celestius Campus. Cute, modern, and student-first event hub.">
+  <meta name="theme-color" content="#FAF7FD">
+
+  <!-- Favicon with Cute Bubble Emoji SVG -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23EC4899' opacity='0.9'/><circle cx='38' cy='36' r='14' fill='white' opacity='0.7'/><circle cx='68' cy='62' r='8' fill='%23FDE047'/></svg>">
+
+  <!-- Google Fonts: Outfit (modern, geometric, rounded) & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Decorative Floating Background Bubbles (Non-blocking, pointer-events: none) -->
+  <div class="bubble-ambient-layer" id="bubbleAmbientLayer" aria-hidden="true">
+    <span class="ambient-bubble b1"></span>
+    <span class="ambient-bubble b2"></span>
+    <span class="ambient-bubble b3"></span>
+    <span class="ambient-bubble b4"></span>
+    <span class="ambient-bubble b5"></span>
+    <span class="ambient-bubble b6"></span>
+    <span class="ambient-bubble b7"></span>
+    <span class="ambient-bubble b8"></span>
+  </div>
+
+  <!-- Announcement / Highlight Bar -->
+  <aside class="announcement-bar" aria-label="Campus Alert">
+    <div class="container announcement-inner">
+      <span class="announcement-pill">
+        <span class="sparkle-icon">✨</span> Celestius Campus Fest 2026
+      </span>
+      <p class="announcement-text">
+        Registrations for Semester Flagship Events are now open! Explore 8+ student-led clubs.
+      </p>
+      <a href="#events" class="announcement-link">Browse Schedule &rarr;</a>
+    </div>
+  </aside>
+
+  <!-- Sticky Glassmorphism Header & Navigation -->
+  <header class="site-header" id="header">
+    <div class="container nav-container">
+      <!-- Logo -->
+      <a href="#home" class="brand-logo" aria-label="Celestius Events Home">
+        <span class="logo-bubble-icon" aria-hidden="true">
+          <span class="logo-inner-bubble"></span>
+          <span class="logo-sparkle">✦</span>
+        </span>
+        <span class="brand-text">
+          <span class="brand-name">Celestius</span>
+          <span class="brand-badge">Events</span>
+        </span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="main-nav" id="mainNav" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#events" class="nav-link">Events</a></li>
+          <li><a href="#clubs" class="nav-link">Clubs</a></li>
+          <li><a href="#register" class="nav-link">Register</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav CTA & Mobile Menu Toggle -->
+      <div class="nav-actions">
+        <a href="#register" class="btn btn-sm btn-nav-cta">
+          <span class="btn-bubble-shine"></span>
+          <span>RSVP Now</span>
+        </a>
+
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-expanded="false" aria-controls="mobileDrawer" aria-label="Toggle navigation menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-drawer-backdrop" id="mobileDrawerBackdrop" aria-hidden="true"></div>
+  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Navigation" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="drawer-logo">
+        <span class="logo-bubble-icon mini" aria-hidden="true">✦</span>
+        <span class="brand-name">Celestius</span>
+      </div>
+      <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close navigation menu">&times;</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="#home" class="mobile-nav-link">🏠 Home</a></li>
+      <li><a href="#events" class="mobile-nav-link">🎉 Explore Events</a></li>
+      <li><a href="#clubs" class="mobile-nav-link">🎪 Campus Clubs</a></li>
+      <li><a href="#register" class="mobile-nav-link">📝 Student Registration</a></li>
+      <li><a href="#faq" class="mobile-nav-link">💡 FAQs</a></li>
+      <li><a href="#contact" class="mobile-nav-link">💌 Get In Touch</a></li>
+    </ul>
+    <div class="drawer-footer">
+      <p class="drawer-quote">"Where campus ideas turn into unforgettable memories."</p>
+      <a href="#events" class="btn btn-primary btn-block drawer-action-btn">Browse All Events</a>
+    </div>
+  </aside>
+
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+      <!-- Hero Floating Bubbles -->
+      <div class="hero-bubbles" aria-hidden="true">
+        <div class="hero-bubble hb-1"></div>
+        <div class="hero-bubble hb-2"></div>
+        <div class="hero-bubble hb-3"></div>
+        <div class="hero-bubble hb-4"></div>
+      </div>
+
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="hero-pill-tag">
+            <span class="pill-dot"></span>
+            <span>Your Ultimate Campus Events Hub</span>
+            <span class="pill-yellow-star">★</span>
+          </div>
+
+          <h1 class="hero-title">
+            Discover <span class="gradient-text">Campus Life</span>
+          </h1>
+
+          <p class="hero-description">
+            Connect with passionate creators, coders, artists, and innovators across campus. Explore hackathons, music jams, dance cyphers, and hands-on workshops tailored for student growth.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#events" class="btn btn-primary btn-lg hero-cta-btn">
+              <span class="btn-bubble-shine"></span>
+              <span class="btn-text">Explore Events</span>
+              <span class="btn-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+            <a href="#register" class="btn btn-secondary btn-lg">
+              <span>Quick RSVP</span>
+              <span class="btn-sparkle" aria-hidden="true">✦</span>
+            </a>
+          </div>
+
+          <!-- Hero Metrics / Quick Highlights -->
+          <div class="hero-stats">
+            <div class="stat-card">
+              <span class="stat-number">8+</span>
+              <span class="stat-label">Active Clubs</span>
+            </div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat-card">
+              <span class="stat-number">1,400+</span>
+              <span class="stat-label">Students Joined</span>
+            </div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat-card">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Free & Fun Vibes</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Decorative Graphic / Visual Showcase -->
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-orb-backdrop"></div>
+          <div class="hero-card-stack">
+            <!-- Floating Mini Badges -->
+            <div class="floating-badge badge-top">
+              <span class="badge-icon">⚡</span>
+              <div class="badge-text">
+                <strong>ByteHacks 2026</strong>
+                <small>24h Code Sprint</small>
+              </div>
+            </div>
+
+            <div class="hero-feature-card">
+              <div class="feature-card-header">
+                <span class="card-chip">Featured Spotlight</span>
+                <span class="card-status-dot"></span>
+              </div>
+              <div class="feature-card-body">
+                <div class="feature-icon-bubble">🎪</div>
+                <h3>Weekend Campus Cypher & Jam</h3>
+                <p>Music, Dance, & Live Demos this Saturday at the Amphitheatre.</p>
+                <div class="feature-tags">
+                  <span class="tag">Free Entry</span>
+                  <span class="tag tag-yellow">★ Popular</span>
+                  <span class="tag">Certificates</span>
+                </div>
+              </div>
+              <div class="feature-card-footer">
+                <div class="avatar-stack">
+                  <span class="mini-avatar av-1">👩‍💻</span>
+                  <span class="mini-avatar av-2">🎨</span>
+                  <span class="mini-avatar av-3">🎵</span>
+                  <span class="avatar-count">+240</span>
+                </div>
+                <span class="card-countdown">Starts in 3 days</span>
+              </div>
+            </div>
+
+            <div class="floating-badge badge-bottom">
+              <span class="badge-icon">📸</span>
+              <div class="badge-text">
+                <strong>Golden Hour Walk</strong>
+                <small>Shutterbugs Club</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Events Section with Search & Filtering -->
+    <section class="events-section" id="events">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header text-center">
+          <div class="section-pill">
+            <span class="sparkle-yellow">✦</span> Curated Experiences
+          </div>
+          <h2 class="section-title">Upcoming Club Events</h2>
+          <p class="section-subtitle">
+            Find workshops, competitions, and hangouts hosted by college clubs. Filter by your passions or search directly!
+          </p>
+        </div>
+
+        <!-- Search & Filter Controls Bar -->
+        <div class="controls-wrapper" role="region" aria-label="Event Search and Category Filters">
+          <!-- Search Bar -->
+          <div class="search-box">
+            <span class="search-icon" aria-hidden="true">🔍</span>
+            <input 
+              type="text" 
+              id="eventSearchInput" 
+              class="search-input" 
+              placeholder="Search by event title, club name, or keywords..."
+              aria-label="Search events by title or club name"
+              autocomplete="off"
+            >
+            <button class="search-clear-btn" id="searchClearBtn" aria-label="Clear search query" style="display: none;">
+              &times;
+            </button>
+          </div>
+
+          <!-- Category Filter Pills -->
+          <div class="filter-pills-container" role="tablist" aria-label="Filter events by category">
+            <button class="filter-pill active" data-category="all" role="tab" aria-selected="true">
+              <span>All Events</span>
+              <span class="filter-count" id="countAll">8</span>
+            </button>
+            <button class="filter-pill" data-category="coding" role="tab" aria-selected="false">
+              <span>💻 Coding & Tech</span>
+              <span class="filter-count" id="countCoding">2</span>
+            </button>
+            <button class="filter-pill" data-category="ai" role="tab" aria-selected="false">
+              <span>🤖 AI & Robotics</span>
+              <span class="filter-count" id="countAi">1</span>
+            </button>
+            <button class="filter-pill" data-category="photography" role="tab" aria-selected="false">
+              <span>📸 Photography & Design</span>
+              <span class="filter-count" id="countPhotography">2</span>
+            </button>
+            <button class="filter-pill" data-category="music" role="tab" aria-selected="false">
+              <span>🎵 Music & Audio</span>
+              <span class="filter-count" id="countMusic">1</span>
+            </button>
+            <button class="filter-pill" data-category="dance" role="tab" aria-selected="false">
+              <span>💃 Dance & Performance</span>
+              <span class="filter-count" id="countDance">1</span>
+            </button>
+            <button class="filter-pill" data-category="entrepreneurship" role="tab" aria-selected="false">
+              <span>🚀 Entrepreneurship</span>
+              <span class="filter-count" id="countEntrepreneurship">1</span>
+            </button>
+          </div>
+
+          <!-- Filter Meta Info & Sorting -->
+          <div class="filter-status-bar">
+            <div class="results-count-text" id="resultsCountText" aria-live="polite">
+              Showing <strong>8</strong> events
+            </div>
+            <div class="sort-selector-wrapper">
+              <label for="eventSortSelect" class="sort-label">Sort by:</label>
+              <select id="eventSortSelect" class="sort-select" aria-label="Sort events">
+                <option value="featured">Featured First</option>
+                <option value="date-soon">Date (Soonest)</option>
+                <option value="title-az">Name (A &rarr; Z)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Events Grid (Rendered Dynamically via script.js) -->
+        <div class="events-grid" id="eventsGrid" role="region" aria-label="Events Grid" aria-live="polite">
+          <!-- Event cards will be dynamically injected here -->
+        </div>
+
+        <!-- Empty State (Shown when search/filter returns zero results) -->
+        <div class="empty-state" id="emptyState" style="display: none;" role="status">
+          <div class="empty-state-bubble" aria-hidden="true">
+            <span class="empty-emoji">🫧</span>
+            <span class="empty-sparkle">✦</span>
+          </div>
+          <h3 class="empty-title">No events found matching your search</h3>
+          <p class="empty-desc">
+            We couldn't find any events matching "<span id="emptyQueryText"></span>". Try another keyword or reset the category filters.
+          </p>
+          <button class="btn btn-secondary btn-sm" id="resetFiltersBtn">
+            Reset Filters & View All
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Meet The Clubs Section -->
+    <section class="clubs-section" id="clubs">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-pill">
+            <span class="sparkle-yellow">★</span> Campus Communities
+          </div>
+          <h2 class="section-title">Meet Our Student Clubs</h2>
+          <p class="section-subtitle">
+            Passionate societies fueling collegiate creativity, engineering brilliance, and cultural excellence.
+          </p>
+        </div>
+
+        <div class="clubs-grid">
+          <!-- Club 1 -->
+          <article class="club-card">
+            <div class="club-icon-circle coding-theme">💻</div>
+            <div class="club-header">
+              <h3 class="club-title">ZeroOne Coding Club</h3>
+              <span class="club-lead">Faculty of CS & Engg</span>
+            </div>
+            <p class="club-desc">
+              Organizing 24h hackathons, competitive coding tournaments, open-source sprints, and dev mentorship circles.
+            </p>
+            <div class="club-meta">
+              <span class="club-tag">380+ Members</span>
+              <span class="club-tag">Bi-weekly Meets</span>
+            </div>
+            <button class="btn-club-filter" data-club-filter="coding">
+              View Club Events &rarr;
+            </button>
+          </article>
+
+          <!-- Club 2 -->
+          <article class="club-card">
+            <div class="club-icon-circle ai-theme">🤖</div>
+            <div class="club-header">
+              <h3 class="club-title">NeuralPulse AI Guild</h3>
+              <span class="club-lead">AI & Robotics Lab</span>
+            </div>
+            <p class="club-desc">
+              Building autonomous drones, training LLMs, conducting computer vision bootcamps, and hosting AI demo days.
+            </p>
+            <div class="club-meta">
+              <span class="club-tag">250+ Members</span>
+              <span class="club-tag">GPU Cloud Access</span>
+            </div>
+            <button class="btn-club-filter" data-club-filter="ai">
+              View Club Events &rarr;
+            </button>
+          </article>
+
+          <!-- Club 3 -->
+          <article class="club-card">
+            <div class="club-icon-circle photo-theme">📸</div>
+            <div class="club-header">
+              <h3 class="club-title">Shutterbugs Society</h3>
+              <span class="club-lead">Visual & Media Arts</span>
+            </div>
+            <p class="club-desc">
+              Campus photo walks, studio lighting masterclasses, indie cinematography, and annual student gallery exhibitions.
+            </p>
+            <div class="club-meta">
+              <span class="club-tag">190+ Members</span>
+              <span class="club-tag">Darkroom & Gear</span>
+            </div>
+            <button class="btn-club-filter" data-club-filter="photography">
+              View Club Events &rarr;
+            </button>
+          </article>
+
+          <!-- Club 4 -->
+          <article class="club-card">
+            <div class="club-icon-circle music-theme">🎵</div>
+            <div class="club-header">
+              <h3 class="club-title">Crescendo Music Hub</h3>
+              <span class="club-lead">Cultural Activities Cell</span>
+            </div>
+            <p class="club-desc">
+              Acoustic jam nights, collegiate band competitions, digital audio production workshops, and rooftop open mics.
+            </p>
+            <div class="club-meta">
+              <span class="club-tag">220+ Members</span>
+              <span class="club-tag">Jam Room Access</span>
+            </div>
+            <button class="btn-club-filter" data-club-filter="music">
+              View Club Events &rarr;
+            </button>
+          </article>
+
+          <!-- Club 5 -->
+          <article class="club-card">
+            <div class="club-icon-circle dance-theme">💃</div>
+            <div class="club-header">
+              <h3 class="club-title">Groove Motion Crew</h3>
+              <span class="club-lead">Performing Arts Council</span>
+            </div>
+            <p class="club-desc">
+              Street dance cyphers, hip-hop choreography sessions, inter-college dance battles, and fitness flashmobs.
+            </p>
+            <div class="club-meta">
+              <span class="club-tag">170+ Dancers</span>
+              <span class="club-tag">Choreography Lab</span>
+            </div>
+            <button class="btn-club-filter" data-club-filter="dance">
+              View Club Events &rarr;
+            </button>
+          </article>
+
+          <!-- Club 6 -->
+          <article class="club-card">
+            <div class="club-icon-circle ecell-theme">🚀</div>
+            <div class="club-header">
+              <h3 class="club-title">E-Cell Venture Guild</h3>
+              <span class="club-lead">Campus Incubation Centre</span>
+            </div>
+            <p class="club-desc">
+              Connecting student founders with angel investors, seed pitch competitions, legal workshops, and founder fireside chats.
+            </p>
+            <div class="club-meta">
+              <span class="club-tag">310+ Innovators</span>
+              <span class="club-tag">₹50K Grant Pool</span>
+            </div>
+            <button class="btn-club-filter" data-club-filter="entrepreneurship">
+              View Club Events &rarr;
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Student Registration Section -->
+    <section class="registration-section" id="register">
+      <div class="container">
+        <div class="registration-layout">
+          <!-- Form Header & Info Sidebar -->
+          <div class="registration-info">
+            <div class="section-pill">
+              <span class="sparkle-yellow">📝</span> Instant RSVP
+            </div>
+            <h2 class="reg-title">Join Your Next Campus Adventure</h2>
+            <p class="reg-subtitle">
+              Registration takes less than a minute. Secure your spot, receive event calendar invites, and claim your free student kit upon arrival.
+            </p>
+
+            <div class="reg-perks-list">
+              <div class="reg-perk-item">
+                <span class="perk-icon">🎟️</span>
+                <div>
+                  <strong>100% Free Entry</strong>
+                  <p>All club events listed are fully sponsored for enrolled students.</p>
+                </div>
+              </div>
+              <div class="reg-perk-item">
+                <span class="perk-icon">📜</span>
+                <div>
+                  <strong>Official Certificates</strong>
+                  <p>Earn verified participation certificates issued by club coordinators.</p>
+                </div>
+              </div>
+              <div class="reg-perk-item">
+                <span class="perk-icon">🤝</span>
+                <div>
+                  <strong>Collaborative Network</strong>
+                  <p>Meet project teammates, study buddies, and mentors across departments.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Frontend Demo Disclaimer Card -->
+            <div class="demo-badge-card">
+              <span class="demo-icon">💡</span>
+              <div>
+                <strong>Frontend Showcase Notice</strong>
+                <p>Form submission is simulated on the client side with robust validation and cute interactive feedback for the Celestius Recruitment Task.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Registration Form Card -->
+          <div class="registration-card-wrapper">
+            <div class="form-decorative-bubble" aria-hidden="true"></div>
+            
+            <form class="event-registration-form" id="eventRegistrationForm" novalidate>
+              <div class="form-header">
+                <h3 class="form-title">Student Registration</h3>
+                <span class="form-badge">Free RSVP</span>
+              </div>
+
+              <!-- Full Name Field -->
+              <div class="form-group" id="groupFullName">
+                <label for="fullName" class="form-label">
+                  Student Full Name <span class="required-star">*</span>
+                </label>
+                <div class="input-with-icon">
+                  <span class="field-icon" aria-hidden="true">👤</span>
+                  <input 
+                    type="text" 
+                    id="fullName" 
+                    name="fullName" 
+                    class="form-control" 
+                    placeholder="e.g. Maya Chen" 
+                    required 
+                    autocomplete="name"
+                    aria-describedby="fullNameError"
+                  >
+                </div>
+                <span class="field-error" id="fullNameError" role="alert" aria-live="polite"></span>
+              </div>
+
+              <!-- Student Email Field -->
+              <div class="form-group" id="groupEmail">
+                <label for="studentEmail" class="form-label">
+                  College / Personal Email <span class="required-star">*</span>
+                </label>
+                <div class="input-with-icon">
+                  <span class="field-icon" aria-hidden="true">✉️</span>
+                  <input 
+                    type="email" 
+                    id="studentEmail" 
+                    name="studentEmail" 
+                    class="form-control" 
+                    placeholder="e.g. maya.chen@campus.edu" 
+                    required 
+                    autocomplete="email"
+                    aria-describedby="emailError"
+                  >
+                </div>
+                <span class="field-error" id="emailError" role="alert" aria-live="polite"></span>
+              </div>
+
+              <!-- College / Department Field -->
+              <div class="form-group" id="groupDepartment">
+                <label for="department" class="form-label">
+                  College / Department <span class="required-star">*</span>
+                </label>
+                <div class="input-with-icon">
+                  <span class="field-icon" aria-hidden="true">🏛️</span>
+                  <input 
+                    type="text" 
+                    id="department" 
+                    name="department" 
+                    class="form-control" 
+                    placeholder="e.g. Computer Science & Engineering" 
+                    required
+                    aria-describedby="departmentError"
+                  >
+                </div>
+                <span class="field-error" id="departmentError" role="alert" aria-live="polite"></span>
+              </div>
+
+              <!-- Year of Study Field -->
+              <div class="form-group" id="groupYear">
+                <label for="yearOfStudy" class="form-label">
+                  Year of Study <span class="required-star">*</span>
+                </label>
+                <div class="input-with-icon">
+                  <span class="field-icon" aria-hidden="true">🎓</span>
+                  <select id="yearOfStudy" name="yearOfStudy" class="form-control select-control" required aria-describedby="yearError">
+                    <option value="" disabled selected>Select your current academic year</option>
+                    <option value="1st Year (Freshman)">1st Year (Freshman)</option>
+                    <option value="2nd Year (Sophomore)">2nd Year (Sophomore)</option>
+                    <option value="3rd Year (Junior)">3rd Year (Junior)</option>
+                    <option value="4th Year (Senior)">4th Year (Senior)</option>
+                    <option value="Postgraduate / Masters / PhD">Postgraduate / Masters / PhD</option>
+                  </select>
+                </div>
+                <span class="field-error" id="yearError" role="alert" aria-live="polite"></span>
+              </div>
+
+              <!-- Selected Event Field -->
+              <div class="form-group" id="groupSelectedEvent">
+                <label for="selectedEvent" class="form-label">
+                  Choose Event to Attend <span class="required-star">*</span>
+                </label>
+                <div class="input-with-icon">
+                  <span class="field-icon" aria-hidden="true">🎪</span>
+                  <select id="selectedEvent" name="selectedEvent" class="form-control select-control" required aria-describedby="eventSelectError">
+                    <option value="" disabled selected>Select an event from the roster</option>
+                    <!-- Dynamically populated in script.js -->
+                  </select>
+                </div>
+                <span class="field-error" id="eventSelectError" role="alert" aria-live="polite"></span>
+              </div>
+
+              <!-- Terms & Agreement Checkbox -->
+              <div class="form-group checkbox-group" id="groupTerms">
+                <label class="custom-checkbox-label">
+                  <input type="checkbox" id="agreeTerms" name="agreeTerms" required aria-describedby="termsError">
+                  <span class="custom-checkbox-box" aria-hidden="true"></span>
+                  <span class="checkbox-text">
+                    I confirm my availability and agree to uphold respectful campus club community guidelines.
+                  </span>
+                </label>
+                <span class="field-error" id="termsError" role="alert" aria-live="polite"></span>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" class="btn btn-primary btn-block btn-submit" id="submitRegBtn">
+                <span class="btn-bubble-shine"></span>
+                <span class="btn-spinner" id="btnSpinner" style="display: none;" aria-hidden="true"></span>
+                <span class="submit-btn-text" id="submitBtnText">Complete Free Registration &rarr;</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Frequently Asked Questions (FAQ) Section -->
+    <section class="faq-section" id="faq">
+      <div class="container max-w-narrow">
+        <div class="section-header text-center">
+          <div class="section-pill">
+            <span class="sparkle-yellow">💡</span> Have Questions?
+          </div>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-subtitle">
+            Everything you need to know about joining college events and student club activities.
+          </p>
+        </div>
+
+        <div class="faq-accordion" id="faqAccordion">
+          <!-- Question 1 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-ans-1">
+              <span>Are all club events free for enrolled students?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-ans-1" hidden>
+              <div class="faq-body">
+                Yes! Every workshop, hackathon, and open mic organized by Celestius campus clubs is 100% free for students. Material kits and refreshments are sponsored by the student activities fund.
+              </div>
+            </div>
+          </div>
+
+          <!-- Question 2 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-ans-2">
+              <span>Can 1st-year students join hackathons or competitions?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-ans-2" hidden>
+              <div class="faq-body">
+                Absolutely! All beginner students are warmly welcomed. Events like ByteHacks and PromptVerse have special mentorship tracks and beginner awards to help freshmen gain experience.
+              </div>
+            </div>
+          </div>
+
+          <!-- Question 3 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-ans-3">
+              <span>Will I receive a certificate of participation?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-ans-3" hidden>
+              <div class="faq-body">
+                Yes, verified digital participation certificates will be sent to your registered email within 48 hours following attendance verification at the venue check-in desk.
+              </div>
+            </div>
+          </div>
+
+          <!-- Question 4 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-ans-4">
+              <span>Can I register for more than one event?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faq-ans-4" hidden>
+              <div class="faq-body">
+                Yes! You are encouraged to participate across different clubs. Simply submit the registration form for each event you would like to attend.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Feedback Section -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="contact-banner">
+          <div class="contact-content">
+            <span class="pill-tag-white">💌 Stay Connected</span>
+            <h2 class="contact-title">Want to host an event or propose a new club?</h2>
+            <p class="contact-desc">
+              The Celestius Student Council is always excited to empower new initiatives. Reach out or visit our campus office anytime!
+            </p>
+            <div class="contact-info-pills">
+              <div class="info-pill">
+                <span class="info-icon">📍</span>
+                <span>Student Activity Center, Room 204</span>
+              </div>
+              <div class="info-pill">
+                <span class="info-icon">📧</span>
+                <span>clubs@celestius.edu</span>
+              </div>
+              <div class="info-pill">
+                <span class="info-icon">🕒</span>
+                <span>Mon - Fri: 10:00 AM - 5:30 PM</span>
+              </div>
+            </div>
+          </div>
+          <div class="contact-action">
+            <a href="mailto:clubs@celestius.edu" class="btn btn-primary btn-lg">
+              <span>Send An Email</span>
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Dedicated Event Details View (Accessible Modal & Dedicated View) -->
+  <div class="details-modal-backdrop" id="detailsModalBackdrop" aria-hidden="true"></div>
+  <div class="details-modal" id="detailsModal" role="dialog" aria-modal="true" aria-labelledby="modalEventTitle" aria-hidden="true">
+    <div class="details-modal-content">
+      <!-- Modal Header Bar -->
+      <div class="modal-nav-bar">
+        <button class="btn-back-link" id="modalBackBtn">
+          <span class="back-arrow">&larr;</span> Back to Events
+        </button>
+        <button class="modal-close-icon" id="modalCloseBtn" aria-label="Close event details modal">
+          &times;
+        </button>
+      </div>
+
+      <div class="modal-body-scrollable" id="modalBody">
+        <!-- Injected dynamically by script.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Registration Success Modal -->
+  <div class="success-modal-backdrop" id="successModalBackdrop" aria-hidden="true"></div>
+  <div class="success-modal" id="successModal" role="alertdialog" aria-modal="true" aria-labelledby="successTitle" aria-hidden="true">
+    <div class="success-modal-bubble-decor" aria-hidden="true"></div>
+    <div class="success-modal-content">
+      <div class="success-icon-badge">
+        <span class="celebration-emoji">🎉</span>
+      </div>
+      <h3 class="success-title" id="successTitle">Registration Confirmed!</h3>
+      <p class="success-lead">
+        Woohoo, <strong id="successStudentName">Student</strong>! You're officially on the guest list for:
+      </p>
+
+      <div class="success-ticket-card">
+        <div class="ticket-header">
+          <span class="ticket-pill">RSVP Confirmed</span>
+          <span class="ticket-id" id="successTicketId">CLST-2026-B812</span>
+        </div>
+        <h4 class="ticket-event-name" id="successEventName">Event Title</h4>
+        <div class="ticket-details-grid">
+          <div class="ticket-item">
+            <span class="t-label">Date:</span>
+            <span class="t-val" id="successEventDate">Nov 14, 2026</span>
+          </div>
+          <div class="ticket-item">
+            <span class="t-label">Venue:</span>
+            <span class="t-val" id="successEventVenue">Computing Lab 4</span>
+          </div>
+          <div class="ticket-item">
+            <span class="t-label">Registered Email:</span>
+            <span class="t-val" id="successStudentEmail">student@campus.edu</span>
+          </div>
+          <div class="ticket-item">
+            <span class="t-label">Entry Fee:</span>
+            <span class="t-val text-green">Free (Pass Verified)</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="demo-success-note">
+        ✨ <em>Frontend Showcase Demo:</em> No server request was made. A calendar invitation placeholder has been generated for your session!
+      </p>
+
+      <div class="success-actions">
+        <button class="btn btn-primary btn-block" id="successCloseBtn">
+          Awesome, Back to Events!
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <!-- Col 1: Brand Info -->
+        <div class="footer-brand-col">
+          <a href="#home" class="brand-logo footer-logo">
+            <span class="logo-bubble-icon mini" aria-hidden="true">✦</span>
+            <span class="brand-text">
+              <span class="brand-name">Celestius</span>
+              <span class="brand-badge">Events</span>
+            </span>
+          </a>
+          <p class="footer-brand-desc">
+            Empowering college students through interdisciplinary clubs, tech hackathons, creative visual arts, music jams, and startup incubation.
+          </p>
+          <div class="footer-social-links" aria-label="Social Media Links">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-bubble-btn" aria-label="Instagram">
+              <span>📷</span>
+            </a>
+            <a href="https://discord.com" target="_blank" rel="noopener noreferrer" class="social-bubble-btn" aria-label="Discord">
+              <span>💬</span>
+            </a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-bubble-btn" aria-label="GitHub">
+              <span>🐙</span>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-bubble-btn" aria-label="LinkedIn">
+              <span>💼</span>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-bubble-btn" aria-label="YouTube">
+              <span>📺</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation Links -->
+        <div class="footer-nav-col">
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-link-list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#events">Upcoming Events</a></li>
+            <li><a href="#clubs">Campus Clubs</a></li>
+            <li><a href="#register">Student Registration</a></li>
+            <li><a href="#faq">Frequently Asked Questions</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Categories -->
+        <div class="footer-nav-col">
+          <h4 class="footer-col-title">Event Categories</h4>
+          <ul class="footer-link-list">
+            <li><a href="#events" data-footer-filter="coding">Coding & Hackathons</a></li>
+            <li><a href="#events" data-footer-filter="ai">AI & Robotics Lab</a></li>
+            <li><a href="#events" data-footer-filter="photography">Photography & Design</a></li>
+            <li><a href="#events" data-footer-filter="music">Acoustic & Music Jams</a></li>
+            <li><a href="#events" data-footer-filter="dance">Street Dance Cyphers</a></li>
+            <li><a href="#events" data-footer-filter="entrepreneurship">Startup Pitch Tank</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Newsletter / Stay Updated -->
+        <div class="footer-newsletter-col">
+          <h4 class="footer-col-title">Campus Weekly Digest</h4>
+          <p class="newsletter-sub">Get event alerts, workshop schedules, and free pass drop notifications in your inbox.</p>
+          <form class="footer-newsletter-form" id="newsletterForm" onsubmit="event.preventDefault(); alert('🎉 Thank you for subscribing to Celestius Campus Alerts!');">
+            <div class="newsletter-input-group">
+              <input type="email" class="newsletter-input" placeholder="Enter student email..." required aria-label="Email for newsletter">
+              <button type="submit" class="newsletter-btn" aria-label="Subscribe to newsletter">&rarr;</button>
+            </div>
+          </form>
+          <span class="safe-note">🔒 No spam, unsubscribe anytime.</span>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <p class="copyright-text">
+          &copy; 2026 Celestius Student Community. Crafted with 💖, HTML5, CSS3 &amp; Vanilla JavaScript for the <strong>Celestius Frontend Recruitment Task</strong>.
+        </p>
+        <button class="back-to-top-btn" id="backToTopBtn" aria-label="Scroll back to top">
+          <span>&uarr;</span> Back to Top
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>
